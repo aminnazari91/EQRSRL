@@ -1,0 +1,9 @@
+function Sensors = Proccessing(Sensors, Model)
+
+for i=1:Model.n*Model.m
+    Sensors(i).E = Sensors(i).E - ...
+        (Model.DataPacketSize * Model.Niter * Model.Cavg * Model.Vsup^2 + ...
+         Model.DataPacketSize * Model.Vsup * ...
+        (Model.I0 * exp(1) ^ (Model.Vsup/(Model.Vt*Model.Proc))) * (Model.Niter/Model.f));
+end
+end
