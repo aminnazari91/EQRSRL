@@ -18,7 +18,7 @@ function Sensors = Routing(Sensors, Model, D, r)
                 dq = 0.001;
                 dp = 0.005;
                 delayR = delayR + dq + dp;
-                while pdr(Sender-Model.m*Model.n, Receiver-Model.m*Model.n)+ql<rand()
+                while pdr(Sender-Model.m*Model.n, Receiver-Model.m*Model.n)+ql+0.1<rand()
                     Sensors = SendReceivePackets(Sensors, Model, Sender, 'Data', Receiver, distance);
                     lossR = lossR + 1;
                     sentR = sentR + 1;
@@ -57,7 +57,7 @@ function Sensors = Routing(Sensors, Model, D, r)
                     dq = 0.001;
                     dp = 0.005;
                     delayD = delayD + dq + dp;
-                    while pdr(Sender-Model.m*Model.n, Receiver-Model.m*Model.n)+ql<rand()
+                    while pdr(Sender-Model.m*Model.n, Receiver-Model.m*Model.n)+ql+0.05<rand()
                         Sensors = SendReceivePackets(Sensors, Model, Sender, 'Data', Receiver, distance);
                         lossD = lossD + 1;
                         sentD = sentD + 1;
