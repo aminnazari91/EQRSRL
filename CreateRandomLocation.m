@@ -1,7 +1,7 @@
 function CreateRandomLocation(Model)
 
     n=Model.n;
-    x=Model.dim;
+    x=Model.dim-30;
     y = x;
     X=zeros(1,n);
     Y=X;
